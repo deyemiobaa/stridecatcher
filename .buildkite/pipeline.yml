@@ -9,6 +9,6 @@ steps:
     command: "bundle exec rake test"
     command: "bundle exec rake test:system"
 
-  - label: ":heroku: Deploy"
-    command: "heroku git:remote --app stride-catcher"
-    command: "git push heroku "$$BUILDKITE_COMMIT":main"
+  # - label: ":heroku: Deploy"
+  #   command: "heroku git:remote --app stride-catcher"
+  #   command: "git push heroku "$$BUILDKITE_COMMIT":main"

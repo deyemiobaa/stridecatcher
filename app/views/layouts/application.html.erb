@@ -12,9 +12,12 @@
   </head>
 
   <body>
-    <main class="container flex px-5 mx-auto mt-28">
+    <main class="container px-5 mx-auto mt-28">
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
+      <%= link_to 'Create an account', new_user_registration_path unless current_user %>
+      <%= link_to 'Sign in', new_user_session_path unless current_user %>
+      <%= link_to 'Sign out', destroy_user_session_path, data: { turbo_method: :delete } if current_user %>
       <%= yield %>
     </main>
   </body>
