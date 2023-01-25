@@ -11,5 +11,6 @@ steps:
 
   - label: ":heroku: Deploy"
     branches: "main"
-    command: "heroku git:remote --app stride-catcher"
-    command: "git push heroku "$$BUILDKITE_COMMIT":main"
+    commands: 
+      - "heroku git:remote --app stride-catcher"
+      - "git push heroku "$$BUILDKITE_COMMIT":main"
