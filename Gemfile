@@ -74,3 +74,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# Dev helpers
+gem 'strong_migrations'
