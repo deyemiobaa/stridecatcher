@@ -77,3 +77,5 @@ end
 
 # Dev helpers
 gem 'strong_migrations'
+
+gem "devise", "~> 4.8"
