@@ -2,8 +2,8 @@ steps:
   - label: "Setup"
     command: "bundle install"
     command: "yarn"
-    # command: "bundle exec rake db:setup"
-    # command: "bundle exec rake db:schema:load"
+    command: "bundle exec rake db:setup"
+    command: "bundle exec rake db:schema:load"
   
   - label: "Tests"
     command: "bundle exec rake test"
