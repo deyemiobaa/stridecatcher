@@ -1,13 +1,19 @@
 steps:
-  - label: "Setup"
-    command: "scripts/ci/setup.sh"
+  - label: "Install dependencies"
+    command: "bundle install && yarn"
+
+  - wait
+
+  - label: "Setup database"
+    command: "bundle exec rake db:setup && bundle exec rake db:schema:load"
 
   - wait
 
   - label: "Test"
-    command: "scripts/ci/test.sh"
+    command: "bundle exec rake test && bundle exec rake test:system"
 
   - wait
 
   - label: "Deploy"
-    command: "scripts/ci/deploy.sh"
+    branches: "main"
+    command: "heroku git:remote --app stride-catcher && git push heroku "$$BUILDKITE_COMMIT":main"
