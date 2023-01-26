@@ -1,18 +1,24 @@
 steps:
   - label: "Install dependencies"
-    command: "bundle install && yarn"
+    commands: 
+      - "bundle install"
+      - "yarn"
 
   - wait
 
   - label: "Setup database"
-    command: "bundle exec rake db:setup && bundle exec rake db:schema:load"
+    commands: 
+      - "bundle exec rake db:setup" 
+      - "bundle exec rake db:schema:load"
 
   - wait
 
   - label: "Test"
-    command: "bundle exec rake test && bundle exec rake test:system"
+    commands: 
+      - "bundle exec rake test" 
+      - "bundle exec rake test:system"
 
-  - wait
-
-  - label: "Deploy"
-    command: "heroku git:remote --app stride-catcher && git push heroku "$$BUILDKITE_COMMIT":main"
+  # - label: "Deploy"
+  #   commands: 
+  #     - "heroku git:remote --app stride-catcher"
+  #     - "git push heroku "$$BUILDKITE_COMMIT":main"
