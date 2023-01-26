@@ -3,7 +3,7 @@
 set -eu
 
 
-bundle install
+bin/bundle install
 
 yarn
 
