@@ -7,6 +7,6 @@ bundle install
 
 yarn
 
-bundle exec rake db:setup
+rake db:setup
 
-bundle exec rake db:schema:load
+rake db:schema:load

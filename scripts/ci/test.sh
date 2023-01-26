@@ -2,6 +2,6 @@
 
 set -eu
 
-bundle exec rake test
+rake test
 
-bundle exec rake test:system
+rake test:system
